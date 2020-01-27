@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>validation form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="p-3">
+<h1 class="">Validations</h1>
+<div class="row">
+<form
+        id="app"
+        class="mx-auto col-9"
+        @submit="checkForm"
+        action="https://vuejs.org/"
+>
+    <p v-if="errors.email">
+    <ul>
+        <li v-for="error in errors">{{ error }}</li>
+    </ul>
+    </p>
+    <p>
+        <label for="email">Email</label>
+        <input
+                id="email"
+                class="form-control form-group"
+                v-model="email"
+
+                name="email"
+        >
+    </p>
+
+    <p>
+        <label for="password">password</label>
+        <input
+                id="password"
+                class="form-control form-group"
+                v-model="password"
+                type="password"
+                name="password"
+
+        >
+    </p>
+
+
+
+    <p>
+        <input
+                type="submit"
+                value="Submit"
+                class="btn btn-primary"
+        >
+    </p>
+
+
+</form>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+</html>
